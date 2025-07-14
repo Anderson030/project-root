@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca SPA</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- ===== LOGIN & REGISTER SECTION ===== -->
+  <div id="loginSection" class="login-screen">
+    <h2>Iniciar sesión o registrarse</h2>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Correo electrónico" required />
+      <input type="password" id="loginPassword" placeholder="Contraseña" required />
+      <button type="submit">Ingresar</button>
+      <p>¿No tienes cuenta? <a href="#" id="showRegister">Regístrate</a></p>
+    </form>
+
+    <form id="registerForm" class="hidden">
+      <h3>¿No tienes cuenta? Regístrate</h3>
+      <input type="text" id="registerName" placeholder="Nombre" required />
+      <input type="email" id="registerEmail" placeholder="Correo electrónico" required />
+      <input type="password" id="registerPassword" placeholder="Contraseña" required />
+      <select id="registerRole" required>
+        <option value="" disabled selected>Selecciona rol</option>
+        <option value="user">Usuario</option>
+        <option value="admin">Administrador</option>
+      </select>
+      <button type="submit">Registrarse</button>
+      <p>¿Ya tienes cuenta? <a href="#" id="showLogin">Iniciar sesión</a></p>
+    </form>
+
+    <p id="loginError" class="error-message"></p>
+  </div>
+
+  <!-- ===== APP MAIN SECTION ===== -->
+  <div id="appSection" class="hidden">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Events</h2>
+      <div class="profile">
+        <img src="assets/img/descarga.jpeg" alt="Admin Photo" />
+        <p class="name">Random guy</p>
+        <p class="role">Admin</p>
+      </div>
+      <nav class="menu">
+        <a href="#" class="menu-item active">Events</a>
+        <a href="#" class="logout">Logout ⤴️ </a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="top-header">
+        <div class="header-actions">
+          <button class="add-btn" id="addBtn">ADD NEW EVENT</button>
+        </div>
+      </header>
+
+      <!-- Table -->
+      <section class="table-section">
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Capacity</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody">
+            <!-- Filas dinámicas con JS -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- ===== MODAL ===== -->
+  <div id="userModal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalTitle">Create Event</h2>
+      <form id="userForm">
+        <input type="hidden" id="userId" />
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" id="description" required />
+        </div>
+        <div class="form-group">
+          <label for="capacity">Capacity</label>
+          <input type="number" id="capacity" required />
+        </div>
+        <div class="form-group">
+          <label for="dateOfEvent">Date</label>
+          <input type="date" id="dateOfEvent" required />
+        </div>
+        <span class="close-modal" id="closeModalBtn">Cancel</span>
+        <button type="submit" class="submit-btn">Save</button>  
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
