@@ -1,5 +1,5 @@
 
-# 👨‍💼 SPA Panel de Administración de Usuarios
+# 👨‍💼 SPA PROJECT-ROOT / EVENTOS
 
 Este proyecto es una **Single Page Application (SPA)** construida con **HTML5, CSS3 y JavaScript Vanilla (ES6+)**, que permite gestionar usuarios y eventos. La aplicación implementa todas las operaciones CRUD (Crear, Leer, Actualizar y Eliminar) utilizando `json-server` como backend simulado.
 
