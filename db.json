@@ -13,22 +13,42 @@
       "email": "visitante@libro.io",
       "password": "1234",
       "role": "user"
+    },
+    {
+      "id": "8804",
+      "name": "anderson",
+      "email": "hola@hola.com",
+      "password": "123",
+      "role": "admin",
+      "phone": "",
+      "enrollNumber": "",
+      "dateOfAdmission": "2025-07-14"
+    },
+    {
+      "id": "b60d",
+      "name": "Anderson",
+      "email": "ander@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "phone": "",
+      "enrollNumber": "",
+      "dateOfAdmission": "2025-07-14"
     }
   ],
   "events": [
     {
-      "id": "1f00",
-      "name": "aaa",
-      "description": "Hola",
-      "capacity": "3",
-      "dateOfEvent": "2025-07-14"
+      "id": "5e97afc7-3d52-4292-864f-972b1bf811ed",
+      "name": "Andersonbb",
+      "description": "s",
+      "capacity": "2",
+      "dateOfEvent": "2025-02-02"
     },
     {
-      "id": "020f",
-      "name": "bbb",
-      "description": "Evento 2",
-      "capacity": "5",
-      "dateOfEvent": "2025-07-20"
+      "id": "20e4f184-fa8a-4baf-bf23-f0af2ff1a29b",
+      "name": "Anderson",
+      "description": "dfds",
+      "capacity": "3",
+      "dateOfEvent": "2025-01-01"
     }
   ]
 }

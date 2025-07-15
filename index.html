@@ -12,6 +12,7 @@
   <!-- ===== LOGIN & REGISTER SECTION ===== -->
   <div id="loginSection" class="login-screen">
     <h2>Iniciar sesión o registrarse</h2>
+
     <form id="loginForm">
       <input type="email" id="loginEmail" placeholder="Correo electrónico" required />
       <input type="password" id="loginPassword" placeholder="Contraseña" required />
@@ -43,12 +44,13 @@
       <h2>Events</h2>
       <div class="profile">
         <img src="assets/img/descarga.jpeg" alt="Admin Photo" />
-        <p class="name">Random guy</p>
-        <p class="role">Admin</p>
+        <p id="sidebarName" class="name">Usuario</p>
+        <p id="sidebarRole" class="role">Rol</p>
       </div>
+
       <nav class="menu">
         <a href="#" class="menu-item active">Events</a>
-        <a href="#" class="logout">Logout ⤴️ </a>
+        <a href="#" class="logout">Logout ⤴️</a>
       </nav>
     </aside>
 
@@ -87,7 +89,7 @@
     <div class="modal-content">
       <h2 id="modalTitle">Create Event</h2>
       <form id="userForm">
-        <input type="hidden" id="userId" />
+        <input type="hidden" id="userId" name="userId" />
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" required />
@@ -105,8 +107,9 @@
           <input type="date" id="dateOfEvent" required />
         </div>
         <span class="close-modal" id="closeModalBtn">Cancel</span>
-        <button type="submit" class="submit-btn">Save</button>  
+        <button type="submit" class="submit-btn">Save</button>
       </form>
+
     </div>
   </div>
 

@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/users'; 
+const API_URL = 'http://localhost:3000/users';
 
 // Obtener usuario logueado desde localStorage
 export function getCurrentUser() {
@@ -13,13 +13,12 @@ function setCurrentUser(user) {
 // Eliminar sesión
 export function logout() {
   localStorage.removeItem('user');
-  location.reload(); 
 }
 
 // Login con email y contraseña
 export async function login(email, password) {
   try {
-    const res = await fetch('${API_URL}?email=${email}&password=${password}'); 
+    const res = await fetch(`${API_URL}?email=${email}&password=${password}`);
     const users = await res.json();
 
     if (users.length > 0) {
@@ -38,11 +37,12 @@ export async function login(email, password) {
 // Registrar un nuevo usuario
 export async function register(userData) {
   try {
-    const res = await fetch('${API_URL}?email=${userData.email}'); 
-    const existingUsers = await res.json();
+    // Verificar si el correo ya existe
+    const res = await fetch(`${API_URL}?email=${userData.email}`);
+    const existing = await res.json();
 
-    if (existingUsers.length > 0) {
-      throw new Error('El correo ya está registrado');
+    if (existing.length > 0) {
+      throw new Error('Correo ya registrado');
     }
 
     const postRes = await fetch(API_URL, {
@@ -52,9 +52,9 @@ export async function register(userData) {
     });
 
     const newUser = await postRes.json();
-    setCurrentUser(newUser);
-    return newUser;
+    setCurrentUser(newUser); 
 
+    return newUser;
   } catch (error) {
     console.error('Register error:', error);
     throw error;

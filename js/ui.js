@@ -1,21 +1,24 @@
-import { getUsers } from './api.js';
+import { getEvents } from './api.js';
 
-export async function renderUserTable() {
-  const users = await getUsers();
-  const tbody = document.querySelector('tbody');
+export async function renderEventTable() {
+  console.log('⚙️ Ejecutando renderEventTable...'); 
+  const events = await getEvents();
+  console.log('📦 Datos recibidos:', events);       
+
+  const tbody = document.getElementById('userTableBody');
   tbody.innerHTML = '';
 
-  users.forEach(user => {
+  events.forEach(event => {
     const row = document.createElement('tr');
     row.innerHTML = `
       <td><img src="./assets/img/avatar.png" class="avatar"></td>
-      <td>${user.name}</td>
-      <td>${user.description}</td>
-      <td>${user.capacity}</td>
-      <td>${user.dateOfEvent}</td>
+      <td>${event.name}</td>
+      <td>${event.description}</td>
+      <td>${event.capacity}</td>
+      <td>${event.dateOfEvent}</td>
       <td>
-        <button class="edit-btn" data-id="${user.id}">✏️</button>
-        <button class="delete-btn" data-id="${user.id}">🗑️</button>
+        <button class="edit-btn" data-id="${event.id}">✏️</button>
+        <button class="delete-btn" data-id="${event.id}">🗑️</button>
       </td>
     `;
     tbody.appendChild(row);
